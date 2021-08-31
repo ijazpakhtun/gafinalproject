@@ -36,19 +36,17 @@
         <div class="container">
             <div class="row justify-content-center js-fullheight">
                 <div class="col-md-6 text-center d-flex align-items-center">
-                    <div class="wrap w-100">
+                    <div class="">
                         
-                        <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter">
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalCenter">
                           Add Task
                         </button>
-
-                        <!-- Modal -->
-                    </div>
+                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> 
 
 </section>   
 <br>
@@ -57,230 +55,256 @@
 
 <hr>
 
- <section class="container">
-    <form col-md-6 col-lg-6>
-        <div class="">
-            
-          <div class="form-group col-md-12 col-lg-12">
-            <label for="inputname">Task Name</label>
-            <input type="name" class="form-control" id="inputname" placeholder="Task Name">
-          </div>
-          <div class="form-group col-md-12 col-lg-12">
-            <label for="Description">Description</label>
-            <textarea class="form-control" id="Description" placeholder="Description of the task">
-                </textarea>
-          </div>
-       
-        <div class="form-group col-md-12 col-lg-12">
-          <label for="Assigne">Assign to</label>
-          <input type="text" class="form-control" id="Assigne" placeholder="person name e.g ijaz">
-        </div>
-        
-        
-          <div class="form-group col-md-12 col-lg-12 ">
-            <label for="status">Status</label>
-            <select id="status" class="form-control">
-              <option selected disabled>Choose...</option>
-              <option>TODO</option>
-              <option>IN PROGRESS</option>
-              <option>REVIEW</option>
-              <option>DONE</option>
-              
-            </select>
-          </div>
-        <div class="form-group col-md-12 col-lg-12">
-                    <label for="priority">Priority</label>
-                    <select id="priority" class="form-control">
-                    <option selected disabled>Choose...</option>
-                    <option>High</option>
-                    <option>Medium</option>
-                    <option>Low</option>
+
+		
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close d-flex align-items-center justify-content-center" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true" class="ion-ios-close"></span>
+		        </button>
+		      </div>
+		      <div class="modal-body p-4 py-5 p-md-5">
+		      	<h3 class="text-center mb-3"><strong>ADD A Task</strong> </h3>
+		      <br>
+            <section class="container">
+                <form col-md-6 col-lg-6>
+                    <div class="">
+                        
+                      <div class="form-group col-md-12 col-lg-12">
+                        <label for="inputname">Task Name</label>
+                        <input type="name" class="form-control" id="inputname" placeholder="Task Name">
+                      </div>
+                      <div class="form-group col-md-12 col-lg-12">
+                        <label for="Description">Description</label>
+                        <textarea class="form-control" id="Description" placeholder="Description of the task">
+                            </textarea>
+                      </div>
+                   
+                    <div class="form-group col-md-12 col-lg-12">
+                      <label for="Assigne">Assign to</label>
+                     
+                      <select id="priority" class="form-control">
+                        <option selected disabled>Choose...</option>
+                        <option>Ijaz</option>
+                        <option>Nur</option>
+                        <option>Zach</option>
+                        
+                        </select>
+                     
+                     
+                     
+                      <!-- <input type="text" class="form-control" id="Assigne" placeholder="person name e.g ijaz"> -->
+                    </div>
                     
-                    </select>
-                </div>
-
-
-          <div class="form-group col-md-12 col-lg-12">
-            <label for="duedate">Due Date</label>
-            <input type="date" class="form-control" id="duedate">
-          </div>
-        </div>
-        
-        <div class="form-group col-md-12 col-lg-12 text-center">
+                    
+                      <div class="form-group col-md-12 col-lg-12 ">
+                        <label for="status">Status</label>
+                        <select id="status" class="form-control">
+                          <option selected disabled>Choose...</option>
+                          <option>TODO</option>
+                          <option>IN PROGRESS</option>
+                          <option>REVIEW</option>
+                          <option>DONE</option>
+                          
+                        </select>
+                      </div>
+                    <div class="form-group col-md-12 col-lg-12">
+                                <label for="priority">Priority</label>
+                                <select id="priority" class="form-control">
+                                <option selected disabled>Choose...</option>
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                                
+                                </select>
+                            </div>
             
-               <button type="submit" class="btn btn-primary form-control col-md-6">Add Task</button> 
-        
-        
-    </div>
-</div>
- </form>
-
-</div>
-
-</section>
-
-
-<!-- cards content goes here -->
-
-<section class="container">
-
-        <div class="row">
-
-            <div class="col-md-4 col-lg-4">
-
-                <div class="card " >
-                        <div class="card-header bg-transparent text-center "><strong>Task 1</strong> </div>
-                        <div class="card-body ">
-                        <p><span  class="fw-bold fs-2" ><strong>Author Name : Ijaz</strong></span></p>  
-                        <p><strong>Assigned To : Nur</strong></p>  
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
+            
+                      <div class="form-group col-md-12 col-lg-12">
+                        <label for="duedate">Due Date</label>
+                        <input type="date" class="form-control" id="duedate">
+                      </div>
+                    </div>
+                    
+                    <div class="form-group col-md-12 col-lg-12 text-center">
                         
-                        <div class="col-md-12 col-lg-12">
-                            <h5><strong>Due Date : 20/9/21</strong></h5>
-                            <h5 ><strong>Priority : High</strong></h5>  
-                            <h5><strong>Status : In progress</strong></h5>  
-                        </div> 
-                        
-                        
-                        </div>
-                        <div class="card-footer bg-transparent border-success text-right">
-                            <strong>Action :</strong>
-                            <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
-                            <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
-                        </div>
+                           <button type="submit" class="btn btn-primary form-control col-md-6">Add Task</button> 
+                    
+                    
                 </div>
-
             </div>
+             </form>
+            
+            </div>
+            
+            </section>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 
-            <div class="col-md-4 col-lg-4">
+    <!-- card goes here and modal ended -->
 
-                <div class="card " >
-                        <div class="card-header bg-transparent "><strong>Task 1</strong></div>
-                        <div class="card-body ">
-                        <p><span  class="fw-bold fs-2" ><strong>Author Name : Ijaz</strong></span></p>  
-                        <p><strong>Assigned To : Nur</strong></p>  
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <section class="container">
 
-                        
-                        <div class="col-md-12 col-lg-12">
-                            <h5><strong>Due Date : 20/9/21</strong></h5>
-                            <h5 ><strong>Priority : High</strong></h5>  
-                            <h5><strong>Status : In progress</strong></h5>  
-                        </div> 
-                        
-                        
-                        </div>
-                        <div class="card-footer bg-transparent border-success text-right">
-                            <strong>Action :</strong>
-                            <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
-                            <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
-                        </div>
+            <div class="row">
+    
+                <div class="col-md-4 col-lg-4">
+    
+                    <div class="card " >
+                            <div class="card-header bg-transparent text-center "><strong>Task 1</strong> </div>
+                            <div class="card-body ">
+                            <p><span  class="fw-bold fs-2" ><strong>Author Name : Ijaz</strong></span></p>  
+                            <p><strong>Assigned To : Nur</strong></p>  
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    
+                            
+                            <div class="col-md-12 col-lg-12">
+                                <h5><strong>Due Date : 20/9/21</strong></h5>
+                                <h5 ><strong>Priority : High</strong></h5>  
+                                <h5><strong>Status : In progress</strong></h5>  
+                            </div> 
+                            
+                            
+                            </div>
+                            <div class="card-footer bg-transparent border-success text-right ">
+                                <strong>Action :</strong>
+                                <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
+                                <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
+                            </div>
+                    </div>
+                    <br>
                 </div>
-
-            </div>
-
-            <div class="col-md-4 col-lg-4">
-
-                <div class="card " >
-                        <div class="card-header bg-transparent "><strong>Task 1</strong></div>
-                        <div class="card-body ">
-                        <p><span  class="fw-bold fs-2" ><strong>Author Name : Ijaz</strong></span></p>  
-                        <p><strong>Assigned To : Nur</strong></p>  
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                        
-                        <div class="col-md-12 col-lg-12">
-                            <h5><strong>Due Date : 20/9/21</strong></h5>
-                            <h5 ><strong>Priority : High</strong></h5>  
-                            <h5><strong>Status : In progress</strong></h5>  
-                        </div> 
-                        
-                        
-                        </div>
-                        <div class="card-footer bg-transparent border-success text-right">
-                            <strong>Action :</strong>
-                            <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
-                            <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
-                        </div>
+    
+                <div class="col-md-4 col-lg-4">
+    
+                    <div class="card " >
+                            <div class="card-header bg-transparent "><strong>Task 1</strong></div>
+                            <div class="card-body ">
+                            <p><span  class="fw-bold fs-2" ><strong>Author Name : Ijaz</strong></span></p>  
+                            <p><strong>Assigned To : Nur</strong></p>  
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    
+                            
+                            <div class="col-md-12 col-lg-12">
+                                <h5><strong>Due Date : 20/9/21</strong></h5>
+                                <h5 ><strong>Priority : High</strong></h5>  
+                                <h5><strong>Status : In progress</strong></h5>  
+                            </div> 
+                            
+                            
+                            </div>
+                            <div class="card-footer bg-transparent border-success text-right">
+                                <strong>Action :</strong>
+                                <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
+                                <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
+                            </div>
+                    </div>
+                    <br>
                 </div>
-
-            </div>
-
-            <div class="col-md-4 col-lg-4">
-
-                <div class="card " >
-                        <div class="card-header bg-transparent "><strong>Task 1</strong></div>
-                        <div class="card-body ">
-                        <p><span  class="fw-bold fs-2" ><strong>Author Name : Ijaz</strong></span></p>  
-                        <p><strong>Assigned To : Nur</strong></p>  
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                        
-                        <div class="col-md-12 col-lg-12">
-                            <h5><strong>Due Date : 20/9/21</strong></h5>
-                            <h5 ><strong>Priority : High</strong></h5>  
-                            <h5><strong>Status : In progress</strong></h5>  
-                        </div> 
-                        
-                        
-                        </div>
-                        <div class="card-footer bg-transparent border-success text-right">
-                            <strong>Action :</strong>
-                            <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
-                            <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
-                        </div>
+    
+                <div class="col-md-4 col-lg-4">
+    
+                    <div class="card " >
+                            <div class="card-header bg-transparent "><strong>Task 1</strong></div>
+                            <div class="card-body ">
+                            <p><span  class="fw-bold fs-2" ><strong>Author Name : Ijaz</strong></span></p>  
+                            <p><strong>Assigned To : Nur</strong></p>  
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    
+                            
+                            <div class="col-md-12 col-lg-12">
+                                <h5><strong>Due Date : 20/9/21</strong></h5>
+                                <h5 ><strong>Priority : High</strong></h5>  
+                                <h5><strong>Status : In progress</strong></h5>  
+                            </div> 
+                            
+                            
+                            </div>
+                            <div class="card-footer bg-transparent border-success text-right">
+                                <strong>Action :</strong>
+                                <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
+                                <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
+                            </div>
+                    </div>
+                    <br>
                 </div>
-
-            </div>
-
-            <div class="col-md-4 col-lg-4">
-
-                <div class="card " >
-                        <div class="card-header bg-transparent "><strong>Task 1</strong></div>
-                        <div class="card-body ">
-                        <p><span  class="fw-bold fs-2" ><strong>Author Name : Ijaz</strong></span></p>  
-                        <p><strong>Assigned To : Nur</strong></p>  
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                        
-                        <div class="col-md-12 col-lg-12">
-                            <h5><strong>Due Date : 20/9/21</strong></h5>
-                            <h5 ><strong>Priority : High</strong></h5>  
-                            <h5><strong>Status : In progress</strong></h5>  
-                        </div> 
-                        
-                        
-                        </div>
-                        <div class="card-footer bg-transparent border-success text-right">
-                            <strong>Action :</strong>
-                            <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
-                            <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
-                        </div>
+    
+                <div class="col-md-4 col-lg-4">
+    
+                    <div class="card " >
+                            <div class="card-header bg-transparent "><strong>Task 1</strong></div>
+                            <div class="card-body ">
+                            <p><span  class="fw-bold fs-2" ><strong>Author Name : Ijaz</strong></span></p>  
+                            <p><strong>Assigned To : Nur</strong></p>  
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    
+                            
+                            <div class="col-md-12 col-lg-12">
+                                <h5><strong>Due Date : 20/9/21</strong></h5>
+                                <h5 ><strong>Priority : High</strong></h5>  
+                                <h5><strong>Status : In progress</strong></h5>  
+                            </div> 
+                            
+                            
+                            </div>
+                            <div class="card-footer bg-transparent border-success text-right">
+                                <strong>Action :</strong>
+                                <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
+                                <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
+                            </div>
+                    </div>
+                    <br>
                 </div>
+    
+                <div class="col-md-4 col-lg-4">
+    
+                    <div class="card " >
+                            <div class="card-header bg-transparent "><strong>Task 1</strong></div>
+                            <div class="card-body ">
+                            <p><span  class="fw-bold fs-2" ><strong>Author Name : Ijaz</strong></span></p>  
+                            <p><strong>Assigned To : Nur</strong></p>  
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    
+                            
+                            <div class="col-md-12 col-lg-12">
+                                <h5><strong>Due Date : 20/9/21</strong></h5>
+                                <h5 ><strong>Priority : High</strong></h5>  
+                                <h5><strong>Status : In progress</strong></h5>  
+                            </div> 
+                            
+                            
+                            </div>
+                            <div class="card-footer bg-transparent border-success text-right">
+                                <strong>Action :</strong>
+                                <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
+                                <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
+                            </div>
+                    </div>
+                    <br>
+                </div>
+    
+               
+    
+              
+    
+    
+    </section>
+    
+    
+    
+    
 
-            </div>
-
-           
-
-          
-
-
-</section>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
 
 </body>
 </html>
