@@ -7,7 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
-</head>
+    <script defer src="js/TaskManager.js"></script>
+
+    <script defer src="js/index.js"></script>
+  </head>
 <body>
 <section class="container">
   
@@ -69,30 +72,37 @@
 		      	<h3 class="text-center mb-3"><strong>ADD A Task</strong> </h3>
 		      <br>
             <section class="container">
-                <form col-md-6 col-lg-6>
+                <form  class="needs-validation"  novalidate id="myform" >
                     <div class="">
                         
                       <div class="form-group col-md-12 col-lg-12">
                         <label for="inputname">Task Name</label>
-                        <input type="name" name="taskname" class="form-control" id="inputname" placeholder="Task Name">
+                        <input type="text" name="taskName" class="form-control"  pattern=".{5,10}" id="taksname" placeholder="Task Name" required>
+                        <div class="invalid-feedback">
+                          Name is required and should be of 5 to 10 characters
+                        </div>
                       </div>
                       <div class="form-group col-md-12 col-lg-12">
                         <label for="Description">Description</label>
-                        <textarea class="form-control" id="Description" placeholder="Description of the task">
-                            </textarea>
+                        <textarea class="form-control" name="description"  id="description" placeholder="Description of the task"  required></textarea>
+                            <div class="invalid-feedback">
+                              Decription is required
+                            </div>
                       </div>
                    
                     <div class="form-group col-md-12 col-lg-12">
                       <label for="Assigne">Assign to</label>
                      
-                      <select id="priority" class="form-control">
-                        <option selected disabled>Choose...</option>
+                      <select id="assinedto" class="form-control" name="assinedto"  required>
+                        <option selected value="" disabled>Choose...</option>
                         <option>Ijaz</option>
                         <option>Nur</option>
                         <option>Zach</option>
                         
                         </select>
-                     
+                        <div class="invalid-feedback">
+                          Please select an Assigne.
+                        </div>
                      
                      
                       <!-- <input type="text" class="form-control" id="Assigne" placeholder="person name e.g ijaz"> -->
@@ -101,37 +111,47 @@
                     
                       <div class="form-group col-md-12 col-lg-12 ">
                         <label for="status">Status</label>
-                        <select id="status" class="form-control">
-                          <option selected disabled>Choose...</option>
+                        <select id="status" name="status" class="form-control" required>
+                          <option selected value=""  disabled>Choose...</option>
                           <option>TODO</option>
                           <option>IN PROGRESS</option>
                           <option>REVIEW</option>
                           <option>DONE</option>
                           
                         </select>
+                        <div class="invalid-feedback">
+                          Please select a status.
+                        </div>
                       </div>
                     <div class="form-group col-md-12 col-lg-12">
                                 <label for="priority">Priority</label>
-                                <select id="priority" class="form-control">
-                                <option selected disabled>Choose...</option>
+                                <select id="priority" name="priority" class="form-control" required>
+                                <option selected value="" disabled>Choose...</option>
                                 <option>High</option>
                                 <option>Medium</option>
                                 <option>Low</option>
                                 
                                 </select>
+                                <div class="invalid-feedback">
+                                  Please select an priority.
+                                </div>
                             </div>
             
             
                       <div class="form-group col-md-12 col-lg-12">
                         <label for="duedate">Due Date</label>
-                        <input type="date" class="form-control" id="duedate">
+                        <input type="date" name="duedate" class="form-control" id="duedate" required>
+                        <div class="invalid-feedback " id="datep">
+                          Please select a date.
+                        </div>
                       </div>
+                      
                     </div>
                     
                     <div class="form-group col-md-12 col-lg-12 text-center">
                       <div class="row">
                         <div class="col-md-6">
-                            <button type="submit" class="btn btn-primary form-control col-md-8">Add Task</button> 
+                            <button type="submit" id="taskfrom" class="btn btn-primary form-control col-md-8">Add Task</button> 
 
 
                         </div>
