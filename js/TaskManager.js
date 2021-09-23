@@ -49,7 +49,7 @@ class TaskManager{
 
         this.currentId++;
        this.tasks.push({
-        "currnetId":this.currentId,
+        "currentId":this.currentId,
         taskName:name,
         description:description,
         assinedTo:assinedTo,

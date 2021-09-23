@@ -25,11 +25,12 @@ let datep=document.getElementById("datep");
             let taskname=formData.get("taskName");
             let description=formData.get("description");
 
-           
+           let chtn=(taskname.toString()).trim();
+           let chdesc=(description.toString()).trim();
 
 
 
-          if (!form.checkValidity() || trim(taskname)==='' || trim(description)==='' ) {
+          if (!form.checkValidity() || chtn==='' || chdesc==='' ) {
             event.preventDefault();
             event.stopPropagation();
             if(datep==='')
