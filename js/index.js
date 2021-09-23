@@ -20,31 +20,56 @@ let datep=document.getElementById("datep");
       .forEach(function (form) {
         form.addEventListener('submit', function (event) {
             event.preventDefault();
+            form.validate=true;
+            const formData=new FormData(form);
+            let taskname=formData.get("taskName");
+            let description=formData.get("description");
 
-          if (!form.checkValidity()) {
+           
+
+
+
+          if (!form.checkValidity() || trim(taskname)==='' || trim(description)==='' ) {
             event.preventDefault();
             event.stopPropagation();
-
-            datep.classList.add("d-block");
+            if(datep==='')
+              datep.classList.add("d-block");
           }else{
 
-            const formData=new FormData(form);
-
-          
+           
               task.addTask(formData.get('taskName'),formData.get('description'),formData.get('assinedto'),formData.get('status'), formData.get('priority'),  formData.get('duedate') );
+
+              task.render();
               
-              console.log(task.tasks);
-            // console.log(formData.get('taskName'));
-            form.classList.remove('was-d-block');
-            form.reset();
+              let formModal=document.getElementById("exampleModalCenter");
+            //   formModal.style.display='none';
+            //   formModal.classList.remove='modal-backdrop';
+
+
+            //   var myModal = new bootstrap.Modal(document.getElementById('exampleModalCenter')); // after validation occurs and it is successful, you can now use the variable you defined to call a BootStrap method - this would be inside your successful if statement
+                // myModal('hide');
+
+              $('#exampleModalCenter').modal('hide');
+                $('body').removeClass('modal-open');
+                    $('.modal-backdrop').remove();
+
+
+           
+              form.classList.remove('was-d-block');
+              form.validate=false;
+              form.reset();
+              return false;
           }
           
           form.classList.add('was-validated')
         }, false)
       })
-  })()
+  })();
 
 
+//   let taskHtml=createTaskHtml('taskone', 'task desc', 'ijaz', 'high', 'pending', 'date');
+
+//   console.log(taskHtml);
 
 
 //   let task=new TaskManager();
