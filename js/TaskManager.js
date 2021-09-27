@@ -1,8 +1,8 @@
-const createTaskHtml=(name, description, assinedTo, priority, dueDate, status )=>{
+const createTaskHtml=(id, name, description, assinedTo,status, priority,  dueDate )=>{
 
     const myCard=`
     
-    <div class="col-md-4 col-lg-4">
+    <div class="col-md-4 col-lg-4" data-task-id="${id}">
     
     <div class="card " >
             <div class="card-header bg-transparent text-center "><strong>${name}</strong> </div>
@@ -22,13 +22,16 @@ const createTaskHtml=(name, description, assinedTo, priority, dueDate, status )=
             </div>
             <div class="card-footer bg-transparent border-success text-right ">
                 <strong>Action :</strong>
+                <button type="submit" class="btn btn-info  done-button" id="done">
+                  Done
+                </button>
                 <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
                 <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
             </div>
     </div>
     <br>
 </div>
-    
+   
     `;
 
     return myCard;
@@ -66,6 +69,7 @@ class TaskManager{
            let date=new Date(task.dueDate);
            let formattedDate= date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
            let taskHtml=createTaskHtml(
+            task.id=task.currentId,
             task.taskName,
             task.description,
             task.assinedTo,
@@ -79,6 +83,23 @@ class TaskManager{
         let tasklist=document.getElementById("tasklist");
         
         tasklist.innerHTML=tasksHtml;
+    }
+
+    getTaskById(taskId){
+        let foundTask=[];
+
+        // this.tasks.forEach(task=>{
+
+        for (let i = 0; i < this.tasks.length; i++) {
+            const task = this.tasks[i];
+            if(taskId==task.id){
+                
+                foundTask=task;
+            }
+            
+            
+        }
+        return foundTask;
     }
 }
 

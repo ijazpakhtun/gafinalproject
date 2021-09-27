@@ -33,6 +33,9 @@ let datep=document.getElementById("datep");
           if (!form.checkValidity() || chtn==='' || chdesc==='' ) {
             event.preventDefault();
             event.stopPropagation();
+            // taskname.classList.add("is-invalid");
+            // taskname.classList.remove("is-valid");
+            
             if(datep==='')
               datep.classList.add("d-block");
           }else{
@@ -67,6 +70,25 @@ let datep=document.getElementById("datep");
       })
   })();
 
+
+  let tasklist=document.getElementById("tasklist");
+
+  tasklist.addEventListener('click',(event)=>{
+
+    if(event.target.classList.contains("done-button")){
+
+      const parentTask =event.target.parentElement.parentElement.parentElement;
+      const taskId = (parentTask.dataset.taskId);
+      const taska= task.getTaskById(taskId);
+      
+      taska.status = "Done";
+
+    // Render the tasks
+    task.render();
+
+    }
+   
+  });
 
 //   let taskHtml=createTaskHtml('taskone', 'task desc', 'ijaz', 'high', 'pending', 'date');
 
