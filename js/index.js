@@ -1,12 +1,11 @@
 let task=new TaskManager();
 let myform=document.getElementById("myform");
-// let taskname=document.getElementById("taksname");
-// let description=document.getElementById("description");
+let taskname=document.getElementById("taskname");
+let description=document.getElementById("description");
 // let priority=document.getElementById("priority");
 // let assinedto=document.getElementById("assinedto");
 // let status=document.getElementById("status");
 let datep=document.getElementById("datep");
-
 
 
 (function () {
@@ -22,19 +21,24 @@ let datep=document.getElementById("datep");
             event.preventDefault();
             form.validate=true;
             const formData=new FormData(form);
-            let taskname=formData.get("taskName");
-            let description=formData.get("description");
+            
 
-           let chtn=(taskname.toString()).trim();
-           let chdesc=(description.toString()).trim();
+           let chtn=(formData.get("taskName").toString()).trim();
+           let chdesc=(formData.get("description").toString()).trim();
 
 
 
           if (!form.checkValidity() || chtn==='' || chdesc==='' ) {
             event.preventDefault();
             event.stopPropagation();
-            // taskname.classList.add("is-invalid");
-            // taskname.classList.remove("is-valid");
+
+            if(chtn=='')
+              taskname.classList.add("is-invalid");
+              taskname.classList.remove("is-valid");
+            if(chdesc=='')
+               description.classList.add("is-invalid");
+               description.classList.remove("is-valid");
+              
             
             if(datep==='')
               datep.classList.add("d-block");
@@ -46,12 +50,6 @@ let datep=document.getElementById("datep");
               task.render();
               
               let formModal=document.getElementById("exampleModalCenter");
-            //   formModal.style.display='none';
-            //   formModal.classList.remove='modal-backdrop';
-
-
-            //   var myModal = new bootstrap.Modal(document.getElementById('exampleModalCenter')); // after validation occurs and it is successful, you can now use the variable you defined to call a BootStrap method - this would be inside your successful if statement
-                // myModal('hide');
 
               $('#exampleModalCenter').modal('hide');
                 $('body').removeClass('modal-open');
@@ -89,49 +87,3 @@ let datep=document.getElementById("datep");
     }
    
   });
-
-//   let taskHtml=createTaskHtml('taskone', 'task desc', 'ijaz', 'high', 'pending', 'date');
-
-//   console.log(taskHtml);
-
-
-//   let task=new TaskManager();
-//   task.addTask("test","abc desc", "ijaz", "1234", "todo", "high","123445");
-  
-//   console.log(task.tasks);
-
-
-
-
-
-
-
-// myform.onsubmit=(e)=>{
-
-//     e.preventDefault();
-
-//     if(taskname.value.length <5){
-//         console.log("Task name is required and should of minumum 5 characters");
-//     }
-    
-    
-
-// };
-
-
-
-// document.getElementById("myform").addEventListener("submit", function(event){
-//     event.preventDefault();
-//     console.log("you are here");
-//   });
-
-// const form = document.querySelector("#myform");
-
-// form.addEventListener("submit", (event) => {
-//   const validateName = document.querySelector("#new-task-name");
-//   const validateDescription = document.querySelector("#new-task-description");
-//   const validateAssignedTo = document.querySelector("#new-task-assigned-to");
-//   const validateDueDate = document.querySelector("#new-task-due-date");
-//   const validateStatus = document.querySelector("#new-task-status");
-//   let validationFail = 0;
-// });

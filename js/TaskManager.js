@@ -5,7 +5,7 @@ const createTaskHtml=(id, name, description, assinedTo,status, priority,  dueDat
     <div class="col-md-4 col-lg-4" data-task-id="${id}">
     
     <div class="card " >
-            <div class="card-header bg-transparent text-center "><strong>${name}</strong> </div>
+            <div class="card-header ${status==='Done'?'bg-success':''} text-center "><strong>${name}</strong> </div>
             <div class="card-body ">
             <p><span  class="fw-bold fs-2" ><strong>Author Name : ${assinedTo}</strong></span></p>  
             <p><strong>Assigned To : ${assinedTo}</strong></p>  
@@ -22,9 +22,8 @@ const createTaskHtml=(id, name, description, assinedTo,status, priority,  dueDat
             </div>
             <div class="card-footer bg-transparent border-success text-right ">
                 <strong>Action :</strong>
-                <button type="submit" class="btn btn-info  done-button" id="done">
-                  Done
-                </button>
+                ${status==='Done'?'':'<button type="submit" class="btn btn-info  done-button" id="done"> Done</button>'}
+                
                 <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
                 <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
             </div>
