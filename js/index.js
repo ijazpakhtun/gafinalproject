@@ -3,11 +3,30 @@ task.render(task.load());
 let myform=document.getElementById("myform");
 let taskname=document.getElementById("taskname");
 let description=document.getElementById("description");
+let reset=document.getElementById("reset");
+
 // let priority=document.getElementById("priority");
 // let assinedto=document.getElementById("assinedto");
 // let status=document.getElementById("status");
 let datep=document.getElementById("datep");
 
+description.classList.remove("is-invalid");
+
+description.addEventListener('keyup',function () {
+
+    if((description.value.toString().trim()).length>=5 && (description.value.toString().trim()).length<=10)
+        description.classList.remove("is-invalid");
+});
+taskname.addEventListener('keyup',function () {
+    if(taskname.value.length>=5 && taskname.value.length<=10)
+       taskname.classList.remove("is-invalid");
+});
+
+
+
+
+
+  reset.addEventListener('click',resetform);
 
 
 (function () {
@@ -61,7 +80,7 @@ let datep=document.getElementById("datep");
            
               form.classList.remove('was-d-block');
               form.validate=false;
-              form.reset();
+              resetform();
               return false;
           }
           
@@ -82,7 +101,7 @@ let datep=document.getElementById("datep");
       const taska= task.getTaskById(taskId);
      
       taska.status = "Done";
-
+      task.save();
     // Render the tasks
       task.render();
 
@@ -99,3 +118,13 @@ let datep=document.getElementById("datep");
     }
    
   });
+
+
+  $('#exampleModalCenter').on('hidden.bs.modal', function (e) {
+    resetform();
+    })
+    function resetform() {
+      document.querySelector('#taskname').classList.remove('is-invalid');
+    document.querySelector('#description').classList.remove('is-invalid');
+    document.querySelector('#myform').classList.remove('was-validated');
+    }

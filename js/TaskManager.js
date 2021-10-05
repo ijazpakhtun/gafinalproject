@@ -23,9 +23,8 @@ const createTaskHtml=(id, name, description, assinedTo,status, priority,  dueDat
             <div class="card-footer bg-transparent border-success text-right ">
                 <strong>Action :</strong>
                 ${status==='Done'?'':'<button type="submit" class="btn btn-info  done-button" id="done"> Done</button>'}
+                <button type="submit" class="btn btn-danger delete-button	" > Delete</button>
                 
-                <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
-                <a href="#" class="btn btn-danger delete-button		glyphicon glyphicon-trash"></a>
             </div>
     </div>
     <br>
