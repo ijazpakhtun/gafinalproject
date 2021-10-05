@@ -25,7 +25,7 @@ const createTaskHtml=(id, name, description, assinedTo,status, priority,  dueDat
                 ${status==='Done'?'':'<button type="submit" class="btn btn-info  done-button" id="done"> Done</button>'}
                 
                 <a href="#" class="btn btn-primary 	glyphicon glyphicon-pencil"></a>
-                <a href="#" class="btn btn-danger 		glyphicon glyphicon-trash"></a>
+                <a href="#" class="btn btn-danger delete-button		glyphicon glyphicon-trash"></a>
             </div>
     </div>
     <br>
@@ -99,6 +99,41 @@ class TaskManager{
             
         }
         return foundTask;
+    }
+
+    save(){
+        
+        const tasksJson = JSON.stringify(this.tasks);
+        localStorage.setItem("tasks", tasksJson);
+        const currentId = String(this.currentId);
+        localStorage.setItem("currentId", currentId);
+
+    }
+    load(){
+       if(localStorage.getItem("tasks")){
+            const tasksJson=localStorage.getItem("tasks");
+            this.tasks=JSON.parse(tasksJson);
+
+       }
+
+       if(localStorage.getItem("currentId")){
+            const currentId=localStorage.getItem("currentId");
+            this.currentId=Number(currentId);
+
+       }
+      
+    }
+
+    deleteTask(taskId){
+       const newTasks=[];
+       this.tasks.forEach(task=>{
+
+        if(task.id !==taskId){
+            newTasks.push(task);
+        }
+       });
+
+       this.tasks=newTasks;
     }
 }
 

@@ -1,4 +1,5 @@
 let task=new TaskManager();
+task.render(task.load());
 let myform=document.getElementById("myform");
 let taskname=document.getElementById("taskname");
 let description=document.getElementById("description");
@@ -6,6 +7,7 @@ let description=document.getElementById("description");
 // let assinedto=document.getElementById("assinedto");
 // let status=document.getElementById("status");
 let datep=document.getElementById("datep");
+
 
 
 (function () {
@@ -46,7 +48,7 @@ let datep=document.getElementById("datep");
 
            
               task.addTask(formData.get('taskName'),formData.get('description'),formData.get('assinedto'),formData.get('status'), formData.get('priority'),  formData.get('duedate') );
-
+              task.save();
               task.render();
               
               let formModal=document.getElementById("exampleModalCenter");
@@ -78,12 +80,22 @@ let datep=document.getElementById("datep");
       const parentTask =event.target.parentElement.parentElement.parentElement;
       const taskId = (parentTask.dataset.taskId);
       const taska= task.getTaskById(taskId);
-      
+     
       taska.status = "Done";
 
     // Render the tasks
-    task.render();
+      task.render();
 
+    }
+
+    if(event.target.classList.contains("delete-button")){
+
+      const parentTask =event.target.parentElement.parentElement.parentElement;
+      const taskId = Number(parentTask.dataset.taskId);
+      task.deleteTask(taskId);
+      task.save();
+      task.render();
+     
     }
    
   });
