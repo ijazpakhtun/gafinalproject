@@ -3,6 +3,10 @@ task.render(task.load());
 let myform=document.getElementById("myform");
 let taskname=document.getElementById("taskname");
 let description=document.getElementById("description");
+let assinedto=document.getElementById("assinedto");
+let status=document.getElementById("status");
+let priority=document.getElementById("priority");
+let duedate=document.getElementById("duedate");
 let reset=document.getElementById("reset");
 
 // let priority=document.getElementById("priority");
@@ -77,7 +81,8 @@ taskname.addEventListener('keyup',function () {
                     $('.modal-backdrop').remove();
 
 
-           
+
+              resetvalues();
               form.classList.remove('was-d-block');
               form.validate=false;
               resetform();
@@ -125,6 +130,19 @@ taskname.addEventListener('keyup',function () {
     })
     function resetform() {
       document.querySelector('#taskname').classList.remove('is-invalid');
-    document.querySelector('#description').classList.remove('is-invalid');
-    document.querySelector('#myform').classList.remove('was-validated');
+      document.querySelector('#description').classList.remove('is-invalid');
+      document.querySelector('#myform').classList.remove('was-validated');
+      resetvalues();
+    }
+
+    function resetvalues(){
+
+      taskname.value="";
+      description.value="";
+      duedate.value="";
+      assinedto.value="";
+      status.value="";
+      priority.value="";
+      duedate.value="";
+
     }
