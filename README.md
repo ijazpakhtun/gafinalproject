@@ -1,11 +1,7 @@
-# Project Title
-
-A brief description of what this project does and who it's for
-
-1 # gafinalproject
-2 generation australia final project
-3 We used in our final project the Visual Studio Code, HTML5, CSS, Bootstrap, JavaScript and a bit of React. Also, we used Git and GitHub and Chrome Developer Tools.
-4 This our initial wireframe, then later on we have made a few changes, such as when you click on .......
-5 In our form we have 5 inputs, and after feeling out the form we have to click the submit button and display the tasks on the screen in a card.
-6 The Bootstrap components we used cards, icon, word modal, bage and button.
-7 We created branch for each member, so everytime a member would make a commit, we would notified, too, after pull requesting made and we gave all 3 members to autorise and we trust each others a lot. 
+GAFINALPROJECT
+2. Generation Australia Final Project
+3.  This project was entirely made with the power of Visual Studio Code, elements of HTML5, CSS, Bootstrap, JavaScript and with the inclusion of React. Also, we used Git and GitHub and Chrome Developer Tools.
+4. This our initial wireframe design, which we then later on improved and add on, such as when you click on add task, it locally saves the new information to the file, so when you add a new task and reload the page, the task added will stay and not delete itself
+5. In our form we have 5 mandatory inputs, and after having filled out the form, upon clicking the submit button display the task name and all required information is displayed in a separate card.
+6. The Bootstrap components we used were cards, icons, word modal, badge and buttons.
+7. With the use of github we created separate branch for each member, so everytime a member would make a change to the file or edit it in anyway, they could commit their changes to the github, where one of the other members would authorise the pull request, since we possessed the trust for eachother.
